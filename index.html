@@ -25,6 +25,78 @@
 }
 </script>
 <style>
+   .menu-type-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .menu-type-btn {
+    padding: 0.6rem 2rem;
+    border: 2px solid var(--primary, #b5813a);
+    background: transparent;
+    color: var(--primary, #b5813a);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .menu-type-btn.active,
+  .menu-type-btn:hover {
+    background: var(--primary, #b5813a);
+    color: #fff;
+  }
+  .menu-v {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #4a8c4a;
+    margin-left: 4px;
+  }
+  .menu-origin {
+    font-size: 0.72em;
+    font-weight: 400;
+    color: var(--muted, #888);
+    margin-left: 6px;
+    font-style: italic;
+  }
+  .menu-drinks-cat {
+    grid-column: 1 / -1;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary, #b5813a);
+    border-bottom: 1px solid var(--primary, #b5813a);
+    padding-bottom: 0.3rem;
+    margin: 1.2rem 0 0.6rem;
+  }
+  .menu-wine-prices {
+    font-size: 0.8rem;
+    color: var(--muted, #888);
+    margin-top: 0.2rem;
+  }
+  .menu-spirit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .menu-spirit-row h3 {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .menu-spirit-prices {
+    font-size: 0.88rem;
+    color: var(--muted, #888);
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --navy:#0D1B2E;--navy-mid:#122236;--navy-light:#1a3050;
@@ -247,58 +319,151 @@ footer p{font-size:0.72rem;color:var(--grey)}
   <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Marina</strong> Location</span></div>
 </div>
 
+  
 <section class="menu-section reveal" id="menu">
   <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Food &amp; Drink</span></div>
   <div class="sec-title">Our <em>Menu</em></div>
-  <div class="menu-note"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Evening menu served 16:30–20:30 &nbsp;|&nbsp; Lunch menu served 12:00–16:00</div>
-  <div class="menu-tabs">
-    <button class="tab-btn active" onclick="showTab('ev-starters',this)">Evening Starters</button>
-    <button class="tab-btn" onclick="showTab('ev-mains',this)">Main Meals</button>
-    <button class="tab-btn" onclick="showTab('ev-pizza',this)">Pizza</button>
-    <button class="tab-btn" onclick="showTab('ev-pasta',this)">Pasta</button>
-    <button class="tab-btn" onclick="showTab('ev-sides',this)">Sides</button>
-    <button class="tab-btn" onclick="showTab('lunch',this)">Lunch Menu</button>
+  <div class="menu-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    Lunch menu served 12:00–16:00 &nbsp;|&nbsp; Evening menu served 16:30–20:30
   </div>
-  <div class="menu-panel active" id="tab-ev-starters">
-    <div class="menu-item"><div class="menu-item-top"><h3>Homemade Meatballs</h3><span class="menu-price">£9.95</span></div><p>Served with toasted bread and Neapolitan sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Deep-Fried Brie</h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish.</p></div>
+
+  <!-- TOP LEVEL: Lunch / Evening / Drinks -->
+  <div class="menu-type-switcher">
+    <button class="menu-type-btn active" onclick="switchMenuType('lunch', this)">Lunch</button>
+    <button class="menu-type-btn" onclick="switchMenuType('evening', this)">Evening</button>
+    <button class="menu-type-btn" onclick="switchMenuType('drinks', this)">Drinks</button>
+  </div>
+
+  <!-- LUNCH SUB-TABS -->
+  <div class="menu-tabs" id="lunch-tabs">
+    <button class="tab-btn active" onclick="showTab('lunch-bites', this)">Light Bites &amp; Snacks</button>
+    <button class="tab-btn" onclick="showTab('lunch-mains', this)">Mains</button>
+    <button class="tab-btn" onclick="showTab('lunch-pizza', this)">Pizza</button>
+    <button class="tab-btn" onclick="showTab('lunch-pasta', this)">Pasta</button>
+    <button class="tab-btn" onclick="showTab('lunch-sides', this)">Sides</button>
+  </div>
+
+  <!-- EVENING SUB-TABS -->
+  <div class="menu-tabs" id="evening-tabs" style="display:none">
+    <button class="tab-btn active" onclick="showTab('ev-starters', this)">Starters</button>
+    <button class="tab-btn" onclick="showTab('ev-mains', this)">Mains</button>
+    <button class="tab-btn" onclick="showTab('ev-pizza', this)">Pizza</button>
+    <button class="tab-btn" onclick="showTab('ev-pasta', this)">Pasta</button>
+    <button class="tab-btn" onclick="showTab('ev-sides', this)">Sides</button>
+  </div>
+
+  <!-- DRINKS SUB-TABS -->
+  <div class="menu-tabs" id="drinks-tabs" style="display:none">
+    <button class="tab-btn active" onclick="showTab('drinks-wine', this)">Wine</button>
+    <button class="tab-btn" onclick="showTab('drinks-beer', this)">Beer &amp; Cider</button>
+    <button class="tab-btn" onclick="showTab('drinks-spirits', this)">Spirits</button>
+    <button class="tab-btn" onclick="showTab('drinks-soft', this)">Soft &amp; Hot</button>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- LUNCH PANELS                                                  -->
+  <!-- ============================================================ -->
+
+  <div class="menu-panel active" id="tab-lunch-bites">
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Wrap</h3><span class="menu-price">£9.50</span></div><p>Chicken served in a tortilla wrap with fresh salad and sauce of your choice.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Tikka Wrap</h3><span class="menu-price">£9.50</span></div><p>Chicken tikka served in a tortilla wrap with fresh salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Prawn Cocktail Wrap</h3><span class="menu-price">£9.95</span></div><p>Fresh prawns with crispy salad and a Marie Rose sauce, served in a tortilla wrap or as a salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Turkish Cheese Salad</h3><span class="menu-price">£9.95</span></div><p>Feta cheese and tomato on a bed of crispy salad served with balsamic dressing.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Crispy Chicken Sweet Chilli Salad</h3><span class="menu-price">£9.95</span></div><p>Chicken on a bed of salad topped with sweet chilli sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Caesar Salad</h3><span class="menu-price">£9.95</span></div><p>Chicken on a bed of salad topped with Caesar dressing and Parmesan.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tempura Battered Prawn Salad</h3><span class="menu-price">£9.95</span></div><p>Tempura battered king prawns on a bed of salad with sweet chilli sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bruschetta <span class="menu-v">(v)</span></h3><span class="menu-price">£9.50</span></div><p>Toasted ciabatta topped with tomatoes, red onions, and fresh basil.</p></div>
+  </div>
+
+  <div class="menu-panel" id="tab-lunch-mains">
+    <div class="menu-item"><div class="menu-item-top"><h3>Fish and Chips</h3><span class="menu-price">£15.95</span></div><p>Battered fish with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Sausage and Chips</h3><span class="menu-price">£8.95</span></div><p>Traditional sausage with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Hamburger and Chips</h3><span class="menu-price">£9.50</span></div><p>Beef burger in a bap with home cooked chips. Double up +£2.00 | Add cheese +50p.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Fillet Burger and Chips</h3><span class="menu-price">£9.95</span></div><p>Crispy chicken served in a bap with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Nuggets and Chips</h3><span class="menu-price">£7.95</span></div><p>Crispy chicken nuggets served with home cooked chips.</p></div>
+  </div>
+
+  <div class="menu-panel" id="tab-lunch-pizza">
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Margherita <span class="menu-v">(v)</span></h3><span class="menu-price">£10.50</span></div><p>Tomato, mozzarella, and basil.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Hawaiian</h3><span class="menu-price">£13.25</span></div><p>Tomato, mozzarella, ham, and pineapple.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza BBQ Chicken</h3><span class="menu-price">£13.50</span></div><p>BBQ tomato sauce, mozzarella, and chicken.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Supreme</h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, chicken, mushrooms, peppers, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Pepperoni</h3><span class="menu-price">£13.50</span></div><p>Tomato, mozzarella, and pepperoni.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Vegetarian <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Tomato, mozzarella, mushrooms, peppers, aubergine, and courgette.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Meat Feast</h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Anchor Special</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, mushrooms, peppers, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Especial</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, chicken, and blue cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Seafood</h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, and seafood mix.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£13.95</span></div><p>Tomato, mozzarella, ricotta, and spinach.</p></div>
+  </div>
+
+  <div class="menu-panel" id="tab-lunch-pasta">
+    <div class="menu-item"><div class="menu-item-top"><h3>Lasagne Al Forno</h3><span class="menu-price">£12.95</span></div><p>Homemade meat lasagne.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Meatballs</h3><span class="menu-price">£12.95</span></div><p>Pasta tubes cooked with homemade spicy meatballs in tomato sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Pollo E Funghi</h3><span class="menu-price">£12.95</span></div><p>Linguine pasta with pulled chicken and chestnut mushrooms in a creamy porcini sauce, enriched with cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Funghi Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Linguine with chestnut mushrooms and spinach in a creamy sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Primavera <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Penne pasta in Italian sauce with earthy mushrooms, tomatoes, peppers, aubergine, onions, and cream.</p></div>
+  </div>
+
+  <div class="menu-panel" id="tab-lunch-sides">
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread</h3><span class="menu-price">£7.95</span></div><p>Warm, fluffy pizza bread brushed with garlic butter.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread with Cheese</h3><span class="menu-price">£8.95</span></div><p>Garlic butter pizza bread topped with melted cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chips</h3><span class="menu-price">£5.25</span></div><p>Crispy, golden fried potato chips served hot and salted.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cheesy Chips</h3><span class="menu-price">£6.45</span></div><p>Crispy chips topped with melted cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Onion Rings</h3><span class="menu-price">£5.25</span></div><p>Crispy, golden onion rings fried to perfection.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Mixed Salad</h3><span class="menu-price">£5.50</span></div><p>A mix of crisp, fresh greens and vegetables.</p></div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- EVENING PANELS                                                -->
+  <!-- ============================================================ -->
+
+  <div class="menu-panel" id="tab-ev-starters">
     <div class="menu-item"><div class="menu-item-top"><h3>Fish Cake</h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish and garlic mayo.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Deep Fried Whitebait</h3><span class="menu-price">£9.95</span></div><p>Served with roasted garlic mayonnaise and fresh crispy salad.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Tempura Prawns</h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish and sweet chilli sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Prawn Cocktail</h3><span class="menu-price">£9.95</span></div><p>Atlantic prawns with Marie rose sauce on a bed of fresh salad.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Caesar Salad</h3><span class="menu-price">£9.95</span></div><p>Chopped lettuce with caesar dressing and roasted sliced chicken breast.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Homemade Meatballs</h3><span class="menu-price">£9.95</span></div><p>Served with toasted bread and Neapolitan sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Prawn Cocktail</h3><span class="menu-price">£9.95</span></div><p>Atlantic prawns with Marie Rose sauce on a bed of fresh salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Deep Fried Brie <span class="menu-v">(v)</span></h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Caesar Salad</h3><span class="menu-price">£9.95</span></div><p>Chopped lettuce tossed with Caesar dressing and roasted sliced chicken breast.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Calamari</h3><span class="menu-price">£9.95</span></div><p>Lightly dusted deep fried squid, served with lemon and black pepper mayo.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Mushrooms</h3><span class="menu-price">£9.95</span></div><p>Pan-fried mushrooms in a creamy garlic and herb sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Bruschetta</h3><span class="menu-price">£9.95</span></div><p>Toasted ciabatta topped with tomatoes, red onion, and fresh basil.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Mushrooms <span class="menu-v">(v)</span></h3><span class="menu-price">£9.95</span></div><p>Pan-fried mushrooms in a creamy garlic and herb sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bruschetta <span class="menu-v">(v)</span></h3><span class="menu-price">£9.95</span></div><p>Toasted ciabatta topped with tomatoes, red onion, and fresh basil.</p></div>
   </div>
+
   <div class="menu-panel" id="tab-ev-mains">
     <div class="menu-item"><div class="menu-item-top"><h3>Fish and Chips</h3><span class="menu-price">£18.95</span></div><p>Battered fish with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>8oz Ribeye Steak</h3><span class="menu-price">£27.95</span></div><p>Served with peppercorn sauce and new chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>8oz Fillet Steak</h3><span class="menu-price">£29.95</span></div><p>Served with peppercorn sauce and new chips.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Chicken Milanese</h3><span class="menu-price">£18.95</span></div><p>Garlic flavoured breaded butterfly chicken served with linguini tomato sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Burger</h3><span class="menu-price">£10.95</span></div><p>Crispy chicken served in a bap with home cooked chips.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Hamburger and Chips</h3><span class="menu-price">£10.50</span></div><p>Beef burger in a bap with home cooked chips.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Nuggets and Chips</h3><span class="menu-price">£9.95</span></div><p>Crispy chicken nuggets served with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Lamb Shank</h3><span class="menu-price">£25.95</span></div><p>Served with mashed potatoes, seasonal vegetables, and gravy.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cod, Mussels and Tiger Prawns</h3><span class="menu-price">£24.95</span></div><p>Served with a herby creamy sauce and chips.</p></div>
   </div>
+
   <div class="menu-panel" id="tab-ev-pizza">
-    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Margherita</h3><span class="menu-price">£12.95</span></div><p>Tomato, mozzarella, and basil.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Margherita <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Tomato, mozzarella, and basil.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza Hawaiian</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, ham, and pineapple.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza BBQ Chicken</h3><span class="menu-price">£15.95</span></div><p>BBQ tomato sauce, mozzarella, and chicken.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Supreme</h3><span class="menu-price">£17.95</span></div><p>Tomato, mozzarella, chicken, mushrooms, peppers, and onions.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza Pepperoni</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, and pepperoni.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Vegetarian</h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, mushrooms, peppers, aubergine, courgette.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Vegetarian <span class="menu-v">(v)</span></h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, mushrooms, peppers, aubergine, and courgette.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza Meat Feast</h3><span class="menu-price">£17.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, and onions.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza Anchor Special</h3><span class="menu-price">£17.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, mushrooms, peppers, and onions.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Especial</h3><span class="menu-price">£18.95</span></div><p>Tomato, mozzarella, chicken, and blue cheese.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Seafood</h3><span class="menu-price">£18.95</span></div><p>Tomato, mozzarella, and seafood mix.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Fiorentina</h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, ricotta, and spinach.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Seafood</h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, and seafood mix.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, ricotta, and spinach.</p></div>
   </div>
+
   <div class="menu-panel" id="tab-ev-pasta">
     <div class="menu-item"><div class="menu-item-top"><h3>Lasagne Al Forno</h3><span class="menu-price">£18.50</span></div><p>Homemade meat lasagne.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Alla Pescado</h3><span class="menu-price">£17.95</span></div><p>Fresh mixed seafood in a tomato and garlic sauce.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Penne Meatballs</h3><span class="menu-price">£17.95</span></div><p>Pasta tubes cooked with homemade spicy meatballs in tomato sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Pollo E Funghi</h3><span class="menu-price">£18.50</span></div><p>Linguine pasta with pulled chicken and chestnut mushrooms in a creamy sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Funghi Fiorentina</h3><span class="menu-price">£17.95</span></div><p>Linguine with chestnut mushrooms and spinach in a creamy sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Penne Primavera</h3><span class="menu-price">£17.95</span></div><p>Penne pasta in Italian sauce with earthy mushrooms, tomatoes and peppers.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Pollo E Funghi</h3><span class="menu-price">£18.50</span></div><p>Linguine pasta with pulled chicken and chestnut mushrooms in a creamy porcini sauce, enriched with cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Alla Pescado</h3><span class="menu-price">£17.95</span></div><p>Fresh mixed seafood in a tomato and garlic sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Funghi Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£17.95</span></div><p>Linguine with chestnut mushrooms and spinach in a creamy sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Primavera <span class="menu-v">(v)</span></h3><span class="menu-price">£17.95</span></div><p>Penne pasta in Italian sauce with earthy mushrooms, tomatoes, peppers, aubergine, onions, and cream.</p></div>
   </div>
+
   <div class="menu-panel" id="tab-ev-sides">
     <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread</h3><span class="menu-price">£8.50</span></div><p>Warm, fluffy pizza bread brushed with garlic butter.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread with Cheese</h3><span class="menu-price">£9.50</span></div><p>Garlic butter pizza bread topped with melted cheese.</p></div>
@@ -306,15 +471,211 @@ footer p{font-size:0.72rem;color:var(--grey)}
     <div class="menu-item"><div class="menu-item-top"><h3>Onion Rings</h3><span class="menu-price">£5.50</span></div><p>Crispy, golden onion rings fried to perfection.</p></div>
     <div class="menu-item"><div class="menu-item-top"><h3>Mixed Salad</h3><span class="menu-price">£5.50</span></div><p>A mix of crisp, fresh greens and vegetables.</p></div>
   </div>
-  <div class="menu-panel" id="tab-lunch">
-    <div class="menu-item"><div class="menu-item-top"><h3>Prawn Cocktail</h3><span class="menu-price">£9.95</span></div><p>Fresh prawns with crispy salad and a Marie rose sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Tempura Battered Prawn Salad</h3><span class="menu-price">£9.95</span></div><p>Tempura battered king prawns on a bed of salad with sweet chilli sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Tikka Wrap</h3><span class="menu-price">£9.50</span></div><p>Chicken tikka served in a tortilla wrap with fresh salad.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Turkish Cheese Salad</h3><span class="menu-price">£9.95</span></div><p>Feta cheese and tomato on a bed of crispy salad with balsamic dressing.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Crispy Chicken Sweet Chilli Salad</h3><span class="menu-price">£9.95</span></div><p>Chicken on a bed of salad topped with sweet chilli sauce.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Caesar Salad</h3><span class="menu-price">£9.95</span></div><p>Chicken on a bed of salad topped with Caesar dressing and Parmesan.</p></div>
-    <div class="menu-item"><div class="menu-item-top"><h3>Bruschetta</h3><span class="menu-price">£9.50</span></div><p>Toasted ciabatta topped with tomatoes, red onions, and fresh basil.</p></div>
+
+  <!-- ============================================================ -->
+  <!-- DRINKS PANELS                                                 -->
+  <!-- ============================================================ -->
+
+  <div class="menu-panel" id="tab-drinks-wine">
+    <div class="menu-drinks-cat">White Wine</div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Los Picos Sauvignon Blanc Reserva <span class="menu-origin">Central Valley, Chile</span></h3><span class="menu-price">From £5.80</span></div>
+      <p>A delightful, aromatic Sauvignon Blanc — crisp and lively with apple, gooseberry, and fresh lime.</p>
+      <p class="menu-wine-prices">175ml £5.80 &nbsp;|&nbsp; 250ml £7.20 &nbsp;|&nbsp; Bottle £20.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Pinot Grigio IGT Via Albini <span class="menu-origin">Sicily, Italy</span></h3><span class="menu-price">From £6.10</span></div>
+      <p>Unmistakably Pinot Grigio with hints of acacia flowers and lemon peel. Dry and light.</p>
+      <p class="menu-wine-prices">175ml £6.10 &nbsp;|&nbsp; 250ml £7.50 &nbsp;|&nbsp; Bottle £21.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>The Accomplice Chardonnay <span class="menu-origin">New South Wales, Australia</span></h3><span class="menu-price">£23.95</span></div>
+      <p>Lifted aromas of peach and nectarine with subtle vanilla oak. Soft, creamy, and refreshing.</p>
+      <p class="menu-wine-prices">Bottle £23.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Kotuku Marlborough Sauvignon Blanc <span class="menu-origin">Marlborough, New Zealand</span></h3><span class="menu-price">£28.95</span></div>
+      <p>Beautifully dry and crisp, brimming with exotic fruit flavours.</p>
+      <p class="menu-wine-prices">Bottle £28.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Marques de Vizhoja Albarino <span class="menu-origin">Galicia, Spain</span></h3><span class="menu-price">£29.95</span></div>
+      <p>Complex and intense with aromatic herbs, pear and apple. Sweet, fruity, and smooth.</p>
+      <p class="menu-wine-prices">Bottle £29.95</p>
+    </div>
+
+    <div class="menu-drinks-cat">Red Wine</div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Los Picos Merlot Reserva <span class="menu-origin">Central Valley, Chile</span></h3><span class="menu-price">From £5.80</span></div>
+      <p>Generous fruit flavours of cherry and plum with aromas of coffee and chocolate.</p>
+      <p class="menu-wine-prices">175ml £5.80 &nbsp;|&nbsp; 250ml £7.20 &nbsp;|&nbsp; Bottle £20.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Cal Y Canto Tinto <span class="menu-origin">Spain</span></h3><span class="menu-price">From £6.10</span></div>
+      <p>Big and rich with blueberry, plum, and earthy spices. Long, juicy, and velvety.</p>
+      <p class="menu-wine-prices">175ml £6.10 &nbsp;|&nbsp; 250ml £7.50 &nbsp;|&nbsp; Bottle £21.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Bodega Privada Malbec <span class="menu-origin">Mendoza, Argentina</span></h3><span class="menu-price">£23.95</span></div>
+      <p>Easy-drinking Malbec blend with cherry and plum aromas. Good acidity with tart plum and cranberry flavours.</p>
+      <p class="menu-wine-prices">Bottle £23.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>The Accomplice Shiraz <span class="menu-origin">New South Wales, Australia</span></h3><span class="menu-price">£24.95</span></div>
+      <p>Vibrant red berry fruits with spice and vanilla oak. Smooth and soft with a long, lingering finish.</p>
+      <p class="menu-wine-prices">Bottle £24.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Pimento Ca' Vittoria <span class="menu-origin">Puglia, Italy</span></h3><span class="menu-price">£27.95</span></div>
+      <p>Full bodied and fruity red with a strong backbone of tannins, balanced with rich plummy fruit flavours.</p>
+      <p class="menu-wine-prices">Bottle £27.95</p>
+    </div>
+
+    <div class="menu-drinks-cat">Rosé Wine</div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Pinot Grigio Rosato IGT Via Albini <span class="menu-origin">Sicily, Italy</span></h3><span class="menu-price">From £6.10</span></div>
+      <p>An elegant bouquet of acacia flowers and strawberries. Dry, soft, and well-balanced.</p>
+      <p class="menu-wine-prices">175ml £6.10 &nbsp;|&nbsp; 250ml £7.50 &nbsp;|&nbsp; Bottle £21.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Buffalo Ridge Zinfandel Rosé <span class="menu-origin">California, USA</span></h3><span class="menu-price">From £6.10</span></div>
+      <p>Smooth and easy drinking with a nose of strawberries and flavours of jammy red fruits.</p>
+      <p class="menu-wine-prices">175ml £6.10 &nbsp;|&nbsp; 250ml £7.50 &nbsp;|&nbsp; Bottle £21.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Lou Rosé Côtes de Provence <span class="menu-origin">Provence, France</span></h3><span class="menu-price">£34.95</span></div>
+      <p>Soft pink colour with gooseberry, raspberry, and white blossom. Fresh strawberry and white fruits on the palate.</p>
+      <p class="menu-wine-prices">Bottle £34.95</p>
+    </div>
+
+    <div class="menu-drinks-cat">Sparkling &amp; Champagne</div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>Prosecco <span class="menu-origin">Veneto, Italy</span></h3><span class="menu-price">From £7.50</span></div>
+      <p>Complex yet light bouquet with fruity notes of peach and green apple, with secondary floral notes.</p>
+      <p class="menu-wine-prices">Glass £7.50 &nbsp;|&nbsp; Bottle £25.95</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-top"><h3>House Champagne <span class="menu-origin">Champagne, France</span></h3><span class="menu-price">£60.00</span></div>
+      <p>70% Pinot Noir, 20% Chardonnay, 10% Meunier. Floral and honeyed with notes of green apple, citrus, and pastry.</p>
+      <p class="menu-wine-prices">Bottle £60.00</p>
+    </div>
   </div>
+
+  <div class="menu-panel" id="tab-drinks-beer">
+    <div class="menu-drinks-cat">Beer</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Estrella Damm</h3><span class="menu-price">From £4.00</span></div><p>Half Pint £4.00 &nbsp;|&nbsp; Pint £6.00</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Peroni (330ml)</h3><span class="menu-price">From £4.20</span></div><p>Half Pint £4.20 &nbsp;|&nbsp; Pint £6.40</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Biere Perotti</h3><span class="menu-price">—</span></div><p>Ask your server for current pricing.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Morrelli (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Corona (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Budweiser (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Efes (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Gower Sunrise (500ml)</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Gower Gold (500ml)</h3><span class="menu-price">£5.95</span></div></div>
+
+    <div class="menu-drinks-cat">Cider</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Strongbow</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Strongbow Dark Fruits</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bulmers</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Thatchers Gold</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Thatchers Cloudy Lemon</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Thatchers Rosé</h3><span class="menu-price">£5.95</span></div></div>
+  </div>
+
+  <div class="menu-panel" id="tab-drinks-spirits">
+    <div class="menu-drinks-cat">Spirits &nbsp;<small style="font-size:0.75em;font-weight:400">(25ml / 50ml)</small></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Vodka</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Gin</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pink Gin</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bacardi</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Malibu</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Rum</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Brandy</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tia Maria</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Amaretto</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Jack Daniels</h3><span class="menu-price">£4.40 / £6.40</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Whiskey</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Southern Comfort</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Baileys</h3><span class="menu-price">£5.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Port</h3><span class="menu-price">£5.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Limoncello</h3><span class="menu-price">£3.90</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Sambuca</h3><span class="menu-price">£3.90</span></div></div>
+  </div>
+
+  <div class="menu-panel" id="tab-drinks-soft">
+    <div class="menu-drinks-cat">Soft Drinks</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Coke</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Diet Coke</h3><span class="menu-price">£3.40</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Lemonade</h3><span class="menu-price">£3.40</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tonic</h3><span class="menu-price">£2.75</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Soda Water</h3><span class="menu-price">£2.75</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>J20</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Fresh Orange Juice</h3><span class="menu-price">£3.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Fresh Apple Juice</h3><span class="menu-price">£3.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Dash</h3><span class="menu-price">£1.50</span></div></div>
+
+    <div class="menu-drinks-cat">Hot Drinks</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Espresso Single</h3><span class="menu-price">£3.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Espresso Double</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Americano</h3><span class="menu-price">£3.50</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cappuccino</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Latte</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Liqueur Coffee</h3><span class="menu-price">£7.50</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Iced Coffee</h3><span class="menu-price">£4.50</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Hot Chocolate</h3><span class="menu-price">£4.25</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Add Syrup to Coffee / Hot Chocolate</h3><span class="menu-price">£1.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Soya Milk / Oat Milk Supplement</h3><span class="menu-price">£1.00</span></div></div>
+  </div>
+
+  <script>
+  function switchMenuType(type, btn) {
+    // Hide all tab groups
+    ['lunch-tabs', 'evening-tabs', 'drinks-tabs'].forEach(function(id) {
+      document.getElementById(id).style.display = 'none';
+    });
+    // Show the selected tab group
+    document.getElementById(type + '-tabs').style.display = '';
+
+    // Hide all panels
+    document.querySelectorAll('.menu-panel').forEach(function(p) {
+      p.classList.remove('active');
+    });
+
+    // Show the first panel for the selected type
+    var firstPanel = { lunch: 'tab-lunch-bites', evening: 'tab-ev-starters', drinks: 'tab-drinks-wine' };
+    document.getElementById(firstPanel[type]).classList.add('active');
+
+    // Update type button active states
+    document.querySelectorAll('.menu-type-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+
+    // Reset sub-tab active states so first tab is highlighted
+    var tabs = document.getElementById(type + '-tabs').querySelectorAll('.tab-btn');
+    tabs.forEach(function(b, i) {
+      b.classList.toggle('active', i === 0);
+    });
+  }
+
+  function showTab(id, btn) {
+    // Hide all panels
+    document.querySelectorAll('.menu-panel').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    // Deactivate all visible sub-tabs
+    document.querySelectorAll('.menu-tabs').forEach(function(tabs) {
+      if (tabs.style.display !== 'none') {
+        tabs.querySelectorAll('.tab-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+      }
+    });
+    // Show selected panel and activate its button
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  </script>
 </section>
 
 <section class="gallery-section reveal" id="gallery">
