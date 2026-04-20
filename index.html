@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Anchor | Restaurant &amp; Bar | Swansea Marina</title>
+<meta name="description" content="The Anchor — a charming restaurant and bar at Swansea Marina. Serving fresh pizza, pasta, seafood, grills and more in the heart of the Maritime Quarter. Dine in or order via Deliveroo.">
+<meta name="keywords" content="The Anchor Swansea, restaurant Swansea Marina, pizza Swansea, pasta Swansea, Maritime Quarter restaurant Swansea">
+<meta property="og:title" content="The Anchor | Restaurant &amp; Bar Swansea Marina">
+<meta property="og:description" content="Fresh pizza, pasta, seafood and grills at Swansea Marina's Maritime Quarter.">
+<meta property="og:type" content="restaurant">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"The Anchor",
+  "description":"Restaurant and bar at Swansea Marina, Maritime Quarter.",
+  "address":{"@type":"PostalAddress","streetAddress":"1 Anchor Court, Maritime Quarter","addressLocality":"Swansea","postalCode":"SA1 3XA","addressCountry":"GB"},
+  "telephone":"01792683195",
+  "servesCuisine":["Italian","Pizza","Seafood"],
+  "priceRange":"££",
+  "openingHours":["Mo-Th 09:00-21:30","Fr-Sa 09:00-22:30","Su 09:00-21:00"]
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0D1B2E;--navy-mid:#122236;--navy-light:#1a3050;
+  --blue:#1E6FA5;--blue-light:#4CA3D4;--sky:#89C4E1;
+  --cream:#F7F3EC;--white:#FFFFFF;--text:#1a2a3a;--grey:#6b7f94;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy-mid)}
+::-webkit-scrollbar-thumb{background:var(--blue-light);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0.7rem 5%;background:#050a30;border-bottom:1px solid rgba(137,196,225,0.12)}
+.nav-logo img{height:72px;width:auto;display:block}
+nav ul{list-style:none;display:flex;gap:2rem;align-items:center}
+nav ul a{text-decoration:none;color:var(--grey);font-size:0.72rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s}
+nav ul a:hover{color:var(--sky)}
+.nav-book{background:transparent;border:1px solid var(--sky);color:var(--sky) !important;padding:0.55rem 1.3rem;border-radius:1px;font-weight:600 !important;display:inline-flex;align-items:center;gap:7px;transition:all 0.2s}
+.nav-book:hover{background:var(--sky) !important;color:var(--navy) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all 0.3s}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy-mid);border-top:1px solid rgba(137,196,225,0.1)}
+.mobile-menu a{padding:1rem 5%;color:var(--grey);text-decoration:none;font-size:0.75rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.04);transition:color 0.2s}
+.mobile-menu a:hover{color:var(--sky)}
+.mobile-menu.open{display:flex}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;padding:0}
+.hero-left{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:10rem 6% 5rem;position:relative;z-index:2}
+.hero-right{position:relative;overflow:hidden;background:url('hero.jpeg') center/cover no-repeat;background-color:var(--navy-mid)}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,transparent 30%);z-index:1}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.01);animation:heroZoom 10s ease forwards;filter:brightness(0.65) saturate(0.9)}
+@keyframes heroZoom{from{transform:scale(1.01)}to{transform:scale(1)}}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
+.eyebrow-line{width:36px;height:1px;background:var(--sky)}
+.eyebrow-text{font-size:0.65rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sky)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,6vw,6rem);font-weight:600;line-height:0.95;margin-bottom:0.5rem;animation:fadeUp 0.7s ease 0.1s both}
+.h1-italic{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:400;font-style:italic;color:var(--sky);line-height:1;margin-bottom:1.8rem;animation:fadeUp 0.7s ease 0.15s both}
+.hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.85;max-width:420px;margin-bottom:2.5rem;font-weight:300;animation:fadeUp 0.7s ease 0.2s both}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;animation:fadeUp 0.7s ease 0.25s both}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);padding:0.9rem 1.8rem;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all 0.25s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(30,111,165,0.4)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:0.9rem 1.8rem;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:1px;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s}
+.btn-outline:hover{border-color:var(--sky);color:var(--sky);transform:translateY(-2px)}
+.hero-badges{display:flex;flex-direction:column;gap:0.9rem;margin-top:2.5rem;animation:fadeUp 0.7s ease 0.3s both}
+.hero-badge{display:flex;align-items:center;gap:10px;font-size:0.78rem;color:rgba(255,255,255,0.5);font-weight:400}
+.hero-badge svg{width:15px;height:15px;stroke:var(--sky);flex-shrink:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.strip{background:var(--navy-light);display:flex;align-items:stretch;justify-content:center;border-top:1px solid rgba(137,196,225,0.1);border-bottom:1px solid rgba(137,196,225,0.1)}
+.strip-item{display:flex;align-items:center;gap:10px;padding:1.1rem 2.5rem;font-size:0.72rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);border-right:1px solid rgba(255,255,255,0.07);flex:1;justify-content:center}
+.strip-item:last-child{border-right:none}
+.strip-item svg{width:16px;height:16px;stroke:var(--sky);flex-shrink:0}
+.strip-item strong{color:var(--white);font-weight:600}
+section{padding:6rem 5%}
+.sec-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:0.8rem}
+.sec-eye-line{width:28px;height:1px;background:var(--sky)}
+.sec-eye-text{font-size:0.65rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sky)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:600;line-height:1.1;margin-bottom:2.5rem}
+.sec-title em{font-style:italic;color:var(--sky)}
+.about-section{background:var(--cream);color:var(--text);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-section .sec-eye-line{background:var(--blue)}
+.about-section .sec-eye-text{color:var(--blue)}
+.about-section .sec-title{color:var(--text)}
+.about-section .sec-title em{color:var(--blue)}
+.about-img-wrap{overflow:hidden;border-radius:1px;height:480px}
+.about-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.about-img-wrap:hover img{transform:scale(1.04)}
+.about-text p{color:#4a5f72;line-height:1.9;margin-bottom:1rem;font-size:0.95rem;font-weight:300}
+.about-features{display:flex;flex-direction:column;gap:0.65rem;margin-top:1.5rem}
+.about-feat{display:flex;align-items:center;gap:0.9rem;padding:0.8rem 1rem;background:var(--white);border-left:2px solid var(--blue);border-radius:0 1px 1px 0}
+.about-feat svg{width:15px;height:15px;stroke:var(--blue);flex-shrink:0}
+.about-feat span{font-size:0.82rem;font-weight:500;color:var(--text)}
+/* MENU */
+.menu-section{background:var(--navy-mid)}
+.menu-note{font-size:0.8rem;color:var(--grey);margin-bottom:2rem;padding:0.8rem 1rem;background:rgba(137,196,225,0.06);border-left:2px solid rgba(137,196,225,0.3);display:flex;align-items:center;gap:8px}
+.menu-note svg{width:14px;height:14px;stroke:var(--sky);flex-shrink:0}
+.menu-type-switcher{display:flex;justify-content:center;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.menu-type-btn{padding:0.6rem 2rem;border:2px solid var(--sky);background:transparent;color:var(--sky);font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:1px;cursor:pointer;transition:background 0.2s,color 0.2s}
+.menu-type-btn.active,.menu-type-btn:hover{background:var(--sky);color:var(--navy)}
+.menu-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:1px solid rgba(137,196,225,0.15);overflow-x:auto;scrollbar-width:none}
+.menu-tabs::-webkit-scrollbar{display:none}
+.tab-btn{background:none;border:none;color:var(--grey);font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:0.85rem 1.4rem;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s}
+.tab-btn:hover{color:var(--white)}
+.tab-btn.active{color:var(--sky);border-bottom-color:var(--sky)}
+.menu-panel{display:none}
+.menu-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;background:var(--navy-mid);border:1px solid rgba(137,196,225,0.1);border-top:none}
+.menu-item{background:var(--navy-mid);padding:1.6rem;border:1px solid rgba(137,196,225,0.08);position:relative;transition:background 0.2s}
+.menu-item:hover{background:#172f4a}
+.menu-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--sky);transition:width 0.3s}
+.menu-item:hover::before{width:2px}
+.menu-item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.4rem}
+.menu-item h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--white);line-height:1.2}
+.menu-price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--sky);white-space:nowrap}
+.menu-item p{font-size:0.8rem;color:var(--grey);line-height:1.6;font-weight:300}
+.menu-v{font-size:0.72em;font-weight:600;color:#6dbf6d;margin-left:3px}
+.menu-drinks-cat{grid-column:1 / -1;font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--sky);border-bottom:1px solid rgba(137,196,225,0.2);padding-bottom:0.5rem;margin:1.5rem 0 0.5rem;padding:1.2rem 1.6rem 0.5rem}
+.menu-wine-prices{font-size:0.75rem;color:var(--grey);margin-top:0.25rem;font-style:italic}
+/* GALLERY */
+.gallery-section{background:var(--navy);padding:6rem 5%}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gallery-item{overflow:hidden;cursor:pointer;position:relative;border-radius:1px;min-height:260px}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s,filter 0.3s}
+.gallery-item:hover img{transform:scale(1.06);filter:brightness(0.8)}
+.g-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(13,27,46,0);transition:background 0.3s}
+.g-overlay svg{stroke:var(--white);width:26px;height:26px;opacity:0;transition:all 0.3s;transform:scale(0.8)}
+.gallery-item:hover .g-overlay{background:rgba(13,27,46,0.4)}
+.gallery-item:hover .g-overlay svg{opacity:1;transform:scale(1)}
+.gallery-placeholder{min-height:260px;border-radius:1px;border:2px dashed rgba(137,196,225,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(137,196,225,0.03);color:rgba(137,196,225,0.3)}
+.gallery-placeholder svg{width:32px;height:32px;stroke:rgba(137,196,225,0.25)}
+.gallery-placeholder span{font-size:0.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.97);align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:88vh;object-fit:contain}
+.lb-close{position:absolute;top:1.5rem;right:1.5rem;background:rgba(137,196,225,0.15);border:1px solid rgba(137,196,225,0.3);color:var(--white);cursor:pointer;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(137,196,225,0.1);color:var(--white);cursor:pointer;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background 0.2s;border:none}
+.lb-prev{left:1.5rem}.lb-next{right:1.5rem}
+.lb-prev:hover,.lb-next:hover{background:rgba(137,196,225,0.2)}
+/* BOOKINGS */
+.bookings-section{background:var(--navy);text-align:center}
+.bookings-sub{font-size:0.95rem;color:var(--grey);max-width:520px;margin:0 auto 3rem;line-height:1.8;font-weight:300}
+.bookings-cards{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.booking-card{display:flex;flex-direction:column;align-items:center;gap:0.6rem;padding:2.5rem 3rem;background:var(--navy-mid);border:1px solid rgba(137,196,225,0.15);border-radius:2px;text-decoration:none;color:var(--white);transition:all 0.25s;min-width:260px;position:relative;overflow:hidden}
+.booking-card::before{content:'';position:absolute;inset:0;background:rgba(137,196,225,0.04);opacity:0;transition:opacity 0.25s}
+.booking-card:hover{border-color:var(--sky);transform:translateY(-4px);box-shadow:0 12px 40px rgba(137,196,225,0.12)}
+.booking-card:hover::before{opacity:1}
+.booking-icon{width:56px;height:56px;border-radius:50%;background:rgba(137,196,225,0.1);border:1px solid rgba(137,196,225,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:0.5rem}
+.booking-icon svg{width:22px;height:22px;stroke:var(--sky)}
+.booking-label{font-size:0.65rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sky)}
+.booking-value{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--white)}
+.booking-action{font-size:0.72rem;color:var(--grey);margin-top:0.3rem}
+/* INFO */
+.info-section{background:var(--cream);color:var(--text);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.info-section .sec-eye-line{background:var(--blue)}
+.info-section .sec-eye-text{color:var(--blue)}
+.info-section .sec-title{color:var(--text)}
+.info-section .sec-title em{color:var(--blue)}
+.hours-list{display:flex;flex-direction:column}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:0.85rem 0.5rem;border-bottom:1px solid rgba(26,42,58,0.08);transition:background 0.2s}
+.hours-row:hover{background:rgba(30,111,165,0.05)}
+.hours-day{font-weight:500;font-size:0.88rem;color:var(--text)}
+.hours-time{font-size:0.85rem;color:var(--blue);font-weight:500}
+.contact-stack{display:flex;flex-direction:column;gap:0.85rem}
+.contact-card{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;background:var(--white);border:1px solid rgba(30,111,165,0.12);border-radius:1px;text-decoration:none;color:var(--text);transition:border-color 0.2s,box-shadow 0.2s}
+.contact-card:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(30,111,165,0.1)}
+.c-icon{width:38px;height:38px;border-radius:50%;background:rgba(30,111,165,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:17px;height:17px;stroke:var(--blue)}
+.c-label{font-size:0.62rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:2px}
+.c-val{font-size:0.9rem;font-weight:500;color:var(--text)}
+.map-wrap{background:var(--navy-mid);padding:0}
+.map-wrap iframe{display:block;width:100%;height:440px;border:none;filter:grayscale(20%) contrast(1.05)}
+.deliveroo-bar{background:var(--navy-light);padding:1.1rem 5%;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;border-top:1px solid rgba(137,196,225,0.1);border-bottom:1px solid rgba(137,196,225,0.1)}
+.deliveroo-text{font-size:0.72rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:8px}
+.deliveroo-text svg{width:15px;height:15px;stroke:var(--sky)}
+.deliveroo-link{border:1px solid rgba(137,196,225,0.3);color:var(--sky);padding:0.5rem 1.4rem;border-radius:1px;text-decoration:none;font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;display:inline-flex;align-items:center;gap:7px}
+.deliveroo-link:hover{background:rgba(137,196,225,0.1)}
+.deliveroo-link svg{width:14px;height:14px;stroke:currentColor}
+footer{background:#050a30;padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(137,196,225,0.08)}
+.footer-logo img{height:56px;width:auto;display:block}
+footer p{font-size:0.72rem;color:var(--grey)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:0.72rem;color:var(--grey);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--sky)}
+.back-top{position:fixed;bottom:2rem;right:2rem;z-index:500;background:var(--blue);color:var(--white);border:none;cursor:pointer;width:42px;height:42px;border-radius:1px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.2s}
+.back-top svg{width:18px;height:18px;stroke:var(--white)}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:960px){
+  nav ul{display:none}.hamburger{display:flex}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{height:50vw}
+  .hero-right::after{background:linear-gradient(180deg,var(--navy) 0%,transparent 30%)}
+  .hero-left{padding:7rem 5% 3rem}
+  .about-section,.info-section{grid-template-columns:1fr;gap:3rem;padding:4rem 5%}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .strip{flex-wrap:wrap}
+  .strip-item{flex:auto;border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}
+}
+@media(max-width:560px){
+  .menu-panel.active{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .deliveroo-bar{gap:1rem}
+}
+a[href^="tel"]{color:inherit;text-decoration:none;-webkit-text-decoration:none}
+</style>
+</head>
+<body>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLB()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <button class="lb-prev" onclick="changeLB(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-next" onclick="changeLB(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    <img src="logo.JPG" alt="The Anchor Swansea Marina">
+  </div>
+  <ul>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#bookings">Bookings</a></li>
+    <li><a href="#contact">Find Us</a></li>
+    <li><a href="tel:01792683195" class="nav-book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.38 19.79 19.79 0 0 1 1.62 3.73 2 2 0 0 1 3.59 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.77-1.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Reserve a Table</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#menu" onclick="toggleMenu()">Menu</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#bookings" onclick="toggleMenu()">Bookings</a>
+  <a href="#contact" onclick="toggleMenu()">Find Us</a>
+  <a href="tel:01792683195" onclick="toggleMenu()">Call: 01792 683195</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Restaurant &amp; Bar · Swansea Marina</span></div>
+    <h1>The Anchor</h1>
+    <div class="h1-italic">Maritime Quarter</div>
+    <p class="hero-desc">A charming restaurant and bar nestled in the heart of Swansea's picturesque Marina. Fresh pizza, handmade pasta, seafood and a warm welcome — every single visit.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg>View Menu</a>
+      <a href="tel:01792683195" class="btn-outline" style="border:none;padding:0;letter-spacing:normal;font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.6);text-transform:none;pointer-events:none;cursor:default;gap:8px"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.38 19.79 19.79 0 0 1 1.62 3.73 2 2 0 0 1 3.59 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.77-1.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>01792 683195</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>1 Anchor Court, Maritime Quarter, Swansea SA1 3XA</div>
+      <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Open Daily from 9:00am — Also available on Deliveroo</div>
+  <div class="hero-right"></div>
+</section>
+
+<div class="strip">
+  <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Swansea <strong>Marina</strong></span></div>
+  <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Open <strong>Daily from 9am</strong></span></div>
+  <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.38 19.79 19.79 0 0 1 1.62 3.73 2 2 0 0 1 3.59 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.77-1.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><strong><a href="tel:01792683195" style="color:#ffffff;text-decoration:none;-webkit-text-decoration:none;border-bottom:none;outline:none">01792 683195</a></strong></span></div>
+  <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Also on <strong>Deliveroo</strong></span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MENU SECTION                                                  -->
+<!-- ============================================================ -->
+<section class="menu-section reveal" id="menu">
+  <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Food &amp; Drink</span></div>
+  <div class="sec-title">Our <em>Menu</em></div>
+  <div class="menu-note">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    Lunch menu served 12:00–16:00 &nbsp;|&nbsp; Evening menu served 16:30–20:30
+  </div>
+
+  <div class="menu-type-switcher">
+    <button class="menu-type-btn active" onclick="switchMenuType('lunch',this)">Lunch</button>
+    <button class="menu-type-btn" onclick="switchMenuType('evening',this)">Evening</button>
+    <button class="menu-type-btn" onclick="switchMenuType('drinks',this)">Drinks</button>
+  </div>
+
+  <div class="menu-tabs" id="lunch-tabs">
+    <button class="tab-btn active" onclick="showTab('lunch-bites',this)">Light Bites &amp; Snacks</button>
+    <button class="tab-btn" onclick="showTab('lunch-mains',this)">Mains</button>
+    <button class="tab-btn" onclick="showTab('lunch-pizza',this)">Pizza</button>
+    <button class="tab-btn" onclick="showTab('lunch-pasta',this)">Pasta</button>
+    <button class="tab-btn" onclick="showTab('lunch-sides',this)">Sides</button>
+  </div>
+  <div class="menu-tabs" id="evening-tabs" style="display:none">
+    <button class="tab-btn active" onclick="showTab('ev-starters',this)">Starters</button>
+    <button class="tab-btn" onclick="showTab('ev-mains',this)">Mains</button>
+    <button class="tab-btn" onclick="showTab('ev-pizza',this)">Pizza</button>
+    <button class="tab-btn" onclick="showTab('ev-pasta',this)">Pasta</button>
+    <button class="tab-btn" onclick="showTab('ev-sides',this)">Sides</button>
+  </div>
+  <div class="menu-tabs" id="drinks-tabs" style="display:none">
+    <button class="tab-btn active" onclick="showTab('drinks-wine',this)">Wine</button>
+    <button class="tab-btn" onclick="showTab('drinks-beer',this)">Beer &amp; Cider</button>
+    <button class="tab-btn" onclick="showTab('drinks-spirits',this)">Spirits</button>
+    <button class="tab-btn" onclick="showTab('drinks-soft',this)">Soft &amp; Hot</button>
+  </div>
+
+  <!-- LUNCH: LIGHT BITES -->
+  <div class="menu-panel active" id="tab-lunch-bites">
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Wrap</h3><span class="menu-price">£9.50</span></div><p>Chicken served in a tortilla wrap with fresh salad and sauce of your choice.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Tikka Wrap</h3><span class="menu-price">£9.50</span></div><p>Chicken tikka served in a tortilla wrap with fresh salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Prawn Cocktail Wrap</h3><span class="menu-price">£9.95</span></div><p>Fresh prawns with crispy salad and a Marie Rose sauce, served in a tortilla wrap or as a salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Turkish Cheese Salad</h3><span class="menu-price">£9.95</span></div><p>Feta cheese and tomato on a bed of crispy salad served with balsamic dressing.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Crispy Chicken Sweet Chilli Salad</h3><span class="menu-price">£9.95</span></div><p>Chicken on a bed of salad topped with sweet chilli sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Caesar Salad</h3><span class="menu-price">£9.95</span></div><p>Chicken on a bed of salad topped with Caesar dressing and Parmesan.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tempura Battered Prawn Salad</h3><span class="menu-price">£9.95</span></div><p>Tempura battered king prawns on a bed of salad with sweet chilli sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bruschetta <span class="menu-v">(v)</span></h3><span class="menu-price">£9.50</span></div><p>Toasted ciabatta topped with tomatoes, red onions, and fresh basil.</p></div>
+  </div>
+
+  <!-- LUNCH: MAINS -->
+  <div class="menu-panel" id="tab-lunch-mains">
+    <div class="menu-item"><div class="menu-item-top"><h3>Fish and Chips</h3><span class="menu-price">£15.95</span></div><p>Battered fish with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Sausage and Chips</h3><span class="menu-price">£8.95</span></div><p>Traditional sausage with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Hamburger and Chips</h3><span class="menu-price">£9.50</span></div><p>Beef burger in a bap with home cooked chips. Double up +£2.00 | Add cheese +50p.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Fillet Burger and Chips</h3><span class="menu-price">£9.95</span></div><p>Crispy chicken served in a bap with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Nuggets and Chips</h3><span class="menu-price">£7.95</span></div><p>Crispy chicken nuggets served with home cooked chips.</p></div>
+  </div>
+
+  <!-- LUNCH: PIZZA -->
+  <div class="menu-panel" id="tab-lunch-pizza">
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Margherita <span class="menu-v">(v)</span></h3><span class="menu-price">£10.50</span></div><p>Tomato, mozzarella, and basil.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Hawaiian</h3><span class="menu-price">£13.25</span></div><p>Tomato, mozzarella, ham, and pineapple.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza BBQ Chicken</h3><span class="menu-price">£13.50</span></div><p>BBQ tomato sauce, mozzarella, and chicken.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Supreme</h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, chicken, mushrooms, peppers, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Pepperoni</h3><span class="menu-price">£13.50</span></div><p>Tomato, mozzarella, and pepperoni.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Vegetarian <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Tomato, mozzarella, mushrooms, peppers, aubergine, and courgette.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Meat Feast</h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Anchor Special</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, mushrooms, peppers, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Especial</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, chicken, and blue cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Seafood</h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, and seafood mix.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£13.95</span></div><p>Tomato, mozzarella, ricotta, and spinach.</p></div>
+  </div>
+
+  <!-- LUNCH: PASTA -->
+  <div class="menu-panel" id="tab-lunch-pasta">
+    <div class="menu-item"><div class="menu-item-top"><h3>Lasagne Al Forno</h3><span class="menu-price">£12.95</span></div><p>Homemade meat lasagne.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Meatballs</h3><span class="menu-price">£12.95</span></div><p>Pasta tubes cooked with homemade spicy meatballs in tomato sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Pollo E Funghi</h3><span class="menu-price">£12.95</span></div><p>Linguine pasta with pulled chicken and chestnut mushrooms in a creamy porcini sauce, enriched with cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Funghi Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Linguine with chestnut mushrooms and spinach in a creamy sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Primavera <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Penne pasta in Italian sauce with earthy mushrooms, tomatoes, peppers, aubergine, onions, and cream.</p></div>
+  </div>
+
+  <!-- LUNCH: SIDES -->
+  <div class="menu-panel" id="tab-lunch-sides">
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread</h3><span class="menu-price">£7.95</span></div><p>Warm, fluffy pizza bread brushed with garlic butter.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread with Cheese</h3><span class="menu-price">£8.95</span></div><p>Garlic butter pizza bread topped with melted cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chips</h3><span class="menu-price">£5.25</span></div><p>Crispy, golden fried potato chips served hot and salted.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cheesy Chips</h3><span class="menu-price">£6.45</span></div><p>Crispy chips topped with melted cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Onion Rings</h3><span class="menu-price">£5.25</span></div><p>Crispy, golden onion rings fried to perfection.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Mixed Salad</h3><span class="menu-price">£5.50</span></div><p>A mix of crisp, fresh greens and vegetables.</p></div>
+  </div>
+
+  <!-- EVENING: STARTERS -->
+  <div class="menu-panel" id="tab-ev-starters">
+    <div class="menu-item"><div class="menu-item-top"><h3>Fish Cake</h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish and garlic mayo.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Deep Fried Whitebait</h3><span class="menu-price">£9.95</span></div><p>Served with roasted garlic mayonnaise and fresh crispy salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tempura Prawns</h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish and sweet chilli sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Homemade Meatballs</h3><span class="menu-price">£9.95</span></div><p>Served with toasted bread and Neapolitan sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Prawn Cocktail</h3><span class="menu-price">£9.95</span></div><p>Atlantic prawns with Marie Rose sauce on a bed of fresh salad.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Deep Fried Brie <span class="menu-v">(v)</span></h3><span class="menu-price">£9.95</span></div><p>Served with salad garnish.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Caesar Salad</h3><span class="menu-price">£9.95</span></div><p>Chopped lettuce tossed with Caesar dressing and roasted sliced chicken breast.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Calamari</h3><span class="menu-price">£9.95</span></div><p>Lightly dusted deep fried squid, served with lemon and black pepper mayo.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Mushrooms <span class="menu-v">(v)</span></h3><span class="menu-price">£9.95</span></div><p>Pan-fried mushrooms in a creamy garlic and herb sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bruschetta <span class="menu-v">(v)</span></h3><span class="menu-price">£9.95</span></div><p>Toasted ciabatta topped with tomatoes, red onion, and fresh basil.</p></div>
+  </div>
+
+  <!-- EVENING: MAINS -->
+  <div class="menu-panel" id="tab-ev-mains">
+    <div class="menu-item"><div class="menu-item-top"><h3>Fish and Chips</h3><span class="menu-price">£18.95</span></div><p>Battered fish with home cooked chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>8oz Ribeye Steak</h3><span class="menu-price">£27.95</span></div><p>Served with peppercorn sauce and new chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>8oz Fillet Steak</h3><span class="menu-price">£29.95</span></div><p>Served with peppercorn sauce and new chips.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chicken Milanese</h3><span class="menu-price">£18.95</span></div><p>Garlic flavoured breaded butterfly chicken served with linguini tomato sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Lamb Shank</h3><span class="menu-price">£25.95</span></div><p>Served with mashed potatoes, seasonal vegetables, and gravy.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cod, Mussels and Tiger Prawns</h3><span class="menu-price">£24.95</span></div><p>Served with a herby creamy sauce and chips.</p></div>
+  </div>
+
+  <!-- EVENING: PIZZA -->
+  <div class="menu-panel" id="tab-ev-pizza">
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Margherita <span class="menu-v">(v)</span></h3><span class="menu-price">£12.95</span></div><p>Tomato, mozzarella, and basil.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Hawaiian</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, ham, and pineapple.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza BBQ Chicken</h3><span class="menu-price">£15.95</span></div><p>BBQ tomato sauce, mozzarella, and chicken.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Supreme</h3><span class="menu-price">£17.95</span></div><p>Tomato, mozzarella, chicken, mushrooms, peppers, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Pepperoni</h3><span class="menu-price">£15.95</span></div><p>Tomato, mozzarella, and pepperoni.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Vegetarian <span class="menu-v">(v)</span></h3><span class="menu-price">£14.95</span></div><p>Tomato, mozzarella, mushrooms, peppers, aubergine, and courgette.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Meat Feast</h3><span class="menu-price">£17.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Anchor Special</h3><span class="menu-price">£17.95</span></div><p>Tomato, mozzarella, chicken, ham, pepperoni, mushrooms, peppers, and onions.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Chicken Especial</h3><span class="menu-price">£18.95</span></div><p>Tomato, mozzarella, chicken, and blue cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Seafood</h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, and seafood mix.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pizza Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£16.95</span></div><p>Tomato, mozzarella, ricotta, and spinach.</p></div>
+  </div>
+
+  <!-- EVENING: PASTA -->
+  <div class="menu-panel" id="tab-ev-pasta">
+    <div class="menu-item"><div class="menu-item-top"><h3>Lasagne Al Forno</h3><span class="menu-price">£18.50</span></div><p>Homemade meat lasagne.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Meatballs</h3><span class="menu-price">£17.95</span></div><p>Pasta tubes cooked with homemade spicy meatballs in tomato sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Pollo E Funghi</h3><span class="menu-price">£18.50</span></div><p>Linguine pasta with pulled chicken and chestnut mushrooms in a creamy porcini sauce, enriched with cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Alla Pescado</h3><span class="menu-price">£17.95</span></div><p>Fresh mixed seafood in a tomato and garlic sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Linguine Funghi Fiorentina <span class="menu-v">(v)</span></h3><span class="menu-price">£17.95</span></div><p>Linguine with chestnut mushrooms and spinach in a creamy sauce.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Penne Primavera <span class="menu-v">(v)</span></h3><span class="menu-price">£17.95</span></div><p>Penne pasta in Italian sauce with earthy mushrooms, tomatoes, peppers, aubergine, onions, and cream.</p></div>
+  </div>
+
+  <!-- EVENING: SIDES -->
+  <div class="menu-panel" id="tab-ev-sides">
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread</h3><span class="menu-price">£8.50</span></div><p>Warm, fluffy pizza bread brushed with garlic butter.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Garlic Pizza Bread with Cheese</h3><span class="menu-price">£9.50</span></div><p>Garlic butter pizza bread topped with melted cheese.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Chips</h3><span class="menu-price">£5.50</span></div><p>Crispy, golden fried potato chips served hot and salted.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Onion Rings</h3><span class="menu-price">£5.50</span></div><p>Crispy, golden onion rings fried to perfection.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Mixed Salad</h3><span class="menu-price">£5.50</span></div><p>A mix of crisp, fresh greens and vegetables.</p></div>
+  </div>
+
+  <!-- DRINKS: WINE -->
+  <div class="menu-panel" id="tab-drinks-wine">
+    <div class="menu-drinks-cat">White Wine</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Los Picos Sauvignon Blanc Reserva <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Chile</em></h3><span class="menu-price">From £5.80</span></div><p>Crisp and lively with apple, gooseberry, and fresh lime.</p><p class="menu-wine-prices">175ml £5.80 | 250ml £7.20 | Bottle £20.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pinot Grigio IGT Via Albini <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Sicily</em></h3><span class="menu-price">From £6.10</span></div><p>Dry and light with hints of acacia flowers and lemon peel.</p><p class="menu-wine-prices">175ml £6.10 | 250ml £7.50 | Bottle £21.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>The Accomplice Chardonnay <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Australia</em></h3><span class="menu-price">£23.95</span></div><p>Peach and nectarine aromas with subtle vanilla oak. Soft and creamy.</p><p class="menu-wine-prices">Bottle £23.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Kotuku Sauvignon Blanc <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — New Zealand</em></h3><span class="menu-price">£28.95</span></div><p>Beautifully dry and crisp, brimming with exotic fruit flavours.</p><p class="menu-wine-prices">Bottle £28.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Marques de Vizhoja Albarino <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Spain</em></h3><span class="menu-price">£29.95</span></div><p>Complex and intense with aromatic herbs, pear and apple.</p><p class="menu-wine-prices">Bottle £29.95</p></div>
+    <div class="menu-drinks-cat">Red Wine</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Los Picos Merlot Reserva <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Chile</em></h3><span class="menu-price">From £5.80</span></div><p>Cherry and plum flavours with aromas of coffee and chocolate.</p><p class="menu-wine-prices">175ml £5.80 | 250ml £7.20 | Bottle £20.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cal Y Canto Tinto <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Spain</em></h3><span class="menu-price">From £6.10</span></div><p>Big and rich with blueberry, plum, and earthy spices.</p><p class="menu-wine-prices">175ml £6.10 | 250ml £7.50 | Bottle £21.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bodega Privada Malbec <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Argentina</em></h3><span class="menu-price">£23.95</span></div><p>Easy drinking with cherry and plum aromas. Good acidity with cranberry flavours.</p><p class="menu-wine-prices">Bottle £23.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>The Accomplice Shiraz <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Australia</em></h3><span class="menu-price">£24.95</span></div><p>Vibrant red berry fruits with spice and vanilla oak. Long, lingering finish.</p><p class="menu-wine-prices">Bottle £24.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pimento Ca' Vittoria <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Italy</em></h3><span class="menu-price">£27.95</span></div><p>Full bodied and fruity with a strong backbone of tannins and plummy fruit.</p><p class="menu-wine-prices">Bottle £27.95</p></div>
+    <div class="menu-drinks-cat">Rosé Wine</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pinot Grigio Rosato Via Albini <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Sicily</em></h3><span class="menu-price">From £6.10</span></div><p>Elegant bouquet of acacia flowers and strawberries. Dry and well-balanced.</p><p class="menu-wine-prices">175ml £6.10 | 250ml £7.50 | Bottle £21.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Buffalo Ridge Zinfandel Rosé <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — California</em></h3><span class="menu-price">From £6.10</span></div><p>Smooth and easy drinking with strawberries and jammy red fruits.</p><p class="menu-wine-prices">175ml £6.10 | 250ml £7.50 | Bottle £21.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Lou Rosé Côtes de Provence <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — France</em></h3><span class="menu-price">£34.95</span></div><p>Soft pink colour with gooseberry, raspberry, white blossom, and fresh strawberry.</p><p class="menu-wine-prices">Bottle £34.95</p></div>
+    <div class="menu-drinks-cat">Sparkling &amp; Champagne</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Prosecco <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Veneto, Italy</em></h3><span class="menu-price">From £7.50</span></div><p>Light bouquet of peach, green apple, and floral notes.</p><p class="menu-wine-prices">Glass £7.50 | Bottle £25.95</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>House Champagne <em style="font-size:0.8em;color:var(--grey);font-weight:300"> — Champagne, France</em></h3><span class="menu-price">£60.00</span></div><p>Floral and honeyed with notes of green apple, citrus, wet stone, and pastry.</p><p class="menu-wine-prices">Bottle £60.00</p></div>
+  </div>
+
+  <!-- DRINKS: BEER & CIDER -->
+  <div class="menu-panel" id="tab-drinks-beer">
+    <div class="menu-drinks-cat">Beer</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Estrella Damm</h3><span class="menu-price">From £4.00</span></div><p>Half Pint £4.00 | Pint £6.00</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Peroni (330ml)</h3><span class="menu-price">From £4.20</span></div><p>Half Pint £4.20 | Pint £6.40</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Biere Perotti</h3><span class="menu-price">—</span></div><p>Ask your server for pricing.</p></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Morrelli (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Corona (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Budweiser (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Efes (330ml)</h3><span class="menu-price">£4.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Gower Sunrise (500ml)</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Gower Gold (500ml)</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-drinks-cat">Cider</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Strongbow</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Strongbow Dark Fruits</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bulmers</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Thatchers Gold</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Thatchers Cloudy Lemon</h3><span class="menu-price">£5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Thatchers Rosé</h3><span class="menu-price">£5.95</span></div></div>
+  </div>
+
+  <!-- DRINKS: SPIRITS -->
+  <div class="menu-panel" id="tab-drinks-spirits">
+    <div class="menu-drinks-cat">Spirits &nbsp;<span style="font-weight:400;font-size:0.9em">(25ml / 50ml)</span></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Vodka</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Gin</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Pink Gin</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Bacardi</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Malibu</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Rum</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Brandy</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tia Maria</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Amaretto</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Jack Daniels</h3><span class="menu-price">£4.40 / £6.40</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Whiskey</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Southern Comfort</h3><span class="menu-price">£3.90 / £5.95</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Baileys</h3><span class="menu-price">£5.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Port</h3><span class="menu-price">£5.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Limoncello</h3><span class="menu-price">£3.90</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Sambuca</h3><span class="menu-price">£3.90</span></div></div>
+  </div>
+
+  <!-- DRINKS: SOFT & HOT -->
+  <div class="menu-panel" id="tab-drinks-soft">
+    <div class="menu-drinks-cat">Soft Drinks</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Coke</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Diet Coke</h3><span class="menu-price">£3.40</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Lemonade</h3><span class="menu-price">£3.40</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Tonic</h3><span class="menu-price">£2.75</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Soda Water</h3><span class="menu-price">£2.75</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>J20</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Fresh Orange Juice</h3><span class="menu-price">£3.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Fresh Apple Juice</h3><span class="menu-price">£3.20</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Dash</h3><span class="menu-price">£1.50</span></div></div>
+    <div class="menu-drinks-cat">Hot Drinks</div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Espresso Single</h3><span class="menu-price">£3.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Espresso Double</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Americano</h3><span class="menu-price">£3.50</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Cappuccino</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Latte</h3><span class="menu-price">£3.80</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Liqueur Coffee</h3><span class="menu-price">£7.50</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Iced Coffee</h3><span class="menu-price">£4.50</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Hot Chocolate</h3><span class="menu-price">£4.25</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Add Syrup to Coffee / Hot Chocolate</h3><span class="menu-price">£1.00</span></div></div>
+    <div class="menu-item"><div class="menu-item-top"><h3>Soya Milk / Oat Milk Supplement</h3><span class="menu-price">£1.00</span></div></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- GALLERY                                                       -->
+<!-- ============================================================ -->
+<section class="gallery-section reveal" id="gallery">
+  <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Gallery</span></div>
+  <div class="sec-title">Life at <em>The Anchor</em></div>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" onclick="openLB('gallery1.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],0)">
+      <img src="gallery1.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery2.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],1)">
+      <img src="gallery2.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery3.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],2)">
+      <img src="gallery3.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery4.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],3)">
+      <img src="gallery4.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery5.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],4)">
+      <img src="gallery5.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery6.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],5)">
+      <img src="gallery6.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery7.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],6)">
+      <img src="gallery7.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery8.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],7)">
+      <img src="gallery8.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery9.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],8)">
+      <img src="gallery9.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery10.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],9)">
+      <img src="gallery10.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery11.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],10)">
+      <img src="gallery11.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery12.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],11)">
+      <img src="gallery12.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery13.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],12)">
+      <img src="gallery13.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery14.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],13)">
+      <img src="gallery14.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery15.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],14)">
+      <img src="gallery15.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery16.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],15)">
+      <img src="gallery16.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery17.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],16)">
+      <img src="gallery17.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery18.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],17)">
+      <img src="gallery18.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery19.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],18)">
+      <img src="gallery19.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery20.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],19)">
+      <img src="gallery20.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+    <div class="gallery-item" onclick="openLB('gallery21.jpeg',['gallery1.jpeg','gallery2.jpeg','gallery3.jpeg','gallery4.jpeg','gallery5.jpeg','gallery6.jpeg','gallery7.jpeg','gallery8.jpeg','gallery9.jpeg','gallery10.jpeg','gallery11.jpeg','gallery12.jpeg','gallery13.jpeg','gallery14.jpeg','gallery15.jpeg','gallery16.jpeg','gallery17.jpeg','gallery18.jpeg','gallery19.jpeg','gallery20.jpeg','gallery21.jpeg'],20)">
+      <img src="gallery21.jpeg" alt="The Anchor Swansea Marina - food and restaurant">
+      <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ABOUT                                                         -->
+<!-- ============================================================ -->
+<section class="about-section reveal" id="about">
+  <div class="about-img-wrap">
+    <img src="about.JPG" alt="Inside The Anchor restaurant Swansea Marina">
+  </div>
+  <div class="about-text">
+    <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Our Story</span></div>
+    <div class="sec-title">A Marina <em>Institution</em></div>
+    <p>Nestled in the heart of Swansea's beautiful Maritime Quarter, The Anchor has been welcoming guests to its warm and vibrant atmosphere for years. Whether you're here for a relaxed lunch by the water or a special evening dinner, we pride ourselves on delivering outstanding food and service every time.</p>
+    <p>Our kitchen team craft everything with passion — from our stone-baked pizzas and handmade pasta, to our fresh seafood and premium grills. There's something for everyone on our menus.</p>
+    <div class="about-features">
+      <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Freshly prepared food, every day</span></div>
+      <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Stunning marina waterfront views</span></div>
+      <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Fully licensed bar with extensive wine list</span></div>
+      <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Also available on Deliveroo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BOOKINGS                                                      -->
+<!-- ============================================================ -->
+<section class="bookings-section reveal" id="bookings">
+  <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Reservations</span></div>
+  <div class="sec-title">Make a <em>Booking</em></div>
+  <p class="bookings-sub">To reserve a table, give us a call or drop us an email and we'll get back to you as soon as possible.</p>
+  <div class="bookings-cards">
+    <a href="tel:01792683195" class="booking-card">
+      <div class="booking-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.38 19.79 19.79 0 0 1 1.62 3.73 2 2 0 0 1 3.59 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.77-1.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <div class="booking-label">Call Us</div>
+      <div class="booking-value">01792 683195</div>
+      <div class="booking-action">Tap to call</div>
+    </a>
+    <a href="mailto:anchormarina@hotmail.com?subject=Table%20Booking%20Enquiry" class="booking-card">
+      <div class="booking-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="booking-label">Email Us</div>
+      <div class="booking-value">anchormarina@hotmail.com</div>
+      <div class="booking-action">Tap to email</div>
+    </a>
+    <a href="https://wa.me/447540876411?text=Hi%2C%20I%27d%20like%20to%20make%20a%20table%20booking" target="_blank" rel="noopener" class="booking-card">
+      <div class="booking-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <div class="booking-label">WhatsApp</div>
+      <div class="booking-value">07540 876411</div>
+      <div class="booking-action">Tap to message</div>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FIND US                                                       -->
+<!-- ============================================================ -->
+<section class="info-section reveal" id="contact">
+  <div>
+    <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Opening Hours</span></div>
+    <div class="sec-title">When to <em>Visit</em></div>
+    <div class="hours-list">
+      <div class="hours-row"><span class="hours-day">Monday – Thursday</span><span class="hours-time">9:00am – 9:30pm</span></div>
+      <div class="hours-row"><span class="hours-day">Friday – Saturday</span><span class="hours-time">9:00am – 10:30pm</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:00am – 9:00pm</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="sec-eyebrow"><div class="sec-eye-line"></div><span class="sec-eye-text">Get in Touch</span></div>
+    <div class="sec-title">Find <em>Us</em></div>
+    <div class="contact-stack">
+      <a href="tel:01792683195" class="contact-card"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 12.38 19.79 19.79 0 0 1 1.62 3.73 2 2 0 0 1 3.59 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.77-1.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><span class="c-label">Phone</span><span class="c-val">01792 683195</span></div></a>
+      <a href="mailto:anchormarina@hotmail.com" class="contact-card"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="c-label">Email</span><span class="c-val">anchormarina@hotmail.com</span></div></a>
+      <div class="contact-card"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><span class="c-label">Address</span><span class="c-val">1 Anchor Court, Maritime Quarter, Swansea SA1 3XA</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="map-wrap">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2!2d-3.9443!3d51.6143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486ee0b5a7d9b4a1%3A0x0!2sThe+Anchor+Swansea!5e0!3m2!1sen!2suk!4v1" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="deliveroo-bar">
+  <span class="deliveroo-text"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Order online for delivery</span>
+  <a href="https://deliveroo.co.uk" target="_blank" rel="noopener" class="deliveroo-link"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Order on Deliveroo</a>
+</div>
+
+<footer>
+  <div class="footer-logo"><img src="logo.JPG" alt="The Anchor Swansea Marina"></div>
+  <p>&copy; 2025 The Anchor, Swansea Marina. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Find Us</a>
+    <a href="tel:01792683195">01792 683195</a>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+
+var lbImgs=[],lbIdx=0;
+function openLB(src,arr,i){
+  lbImgs=arr;lbIdx=i;
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+function changeLB(d){
+  lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;
+  document.getElementById('lb-img').src=lbImgs[lbIdx];
+}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLB();});
+
+window.addEventListener('scroll',function(){
+  var bt=document.getElementById('backTop');
+  if(window.scrollY>400)bt.classList.add('visible');
+  else bt.classList.remove('visible');
+  document.querySelectorAll('.reveal').forEach(function(el){
+    if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add('visible');
+  });
+});
+
+function switchMenuType(type,btn){
+  ['lunch-tabs','evening-tabs','drinks-tabs'].forEach(function(id){
+    document.getElementById(id).style.display='none';
+  });
+  document.getElementById(type+'-tabs').style.display='';
+  document.querySelectorAll('.menu-panel').forEach(function(p){p.classList.remove('active');});
+  var first={lunch:'tab-lunch-bites',evening:'tab-ev-starters',drinks:'tab-drinks-wine'};
+  document.getElementById(first[type]).classList.add('active');
+  document.querySelectorAll('.menu-type-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  var tabs=document.getElementById(type+'-tabs').querySelectorAll('.tab-btn');
+  tabs.forEach(function(b,i){b.classList.toggle('active',i===0);});
+}
+
+function showTab(id,btn){
+  document.querySelectorAll('.menu-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.menu-tabs').forEach(function(tabs){
+    if(tabs.style.display!=='none'){
+      tabs.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+    }
+  });
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
